@@ -133,7 +133,7 @@ const NavListItems = [
 
   {
     title: "Contact",
-    to: "/",
+    to: "/contact",
   },
 ];
 
@@ -176,7 +176,7 @@ const NavList: React.FC = () => {
               onToggle={() => handleDropdownToggle(index)}
             />
           ) : (
-            <Link to={item.to}>{item.title}</Link>
+            <Link id="menus" to={item.to}>{item.title}</Link>
           )}
         </li>
       ))}
@@ -187,6 +187,7 @@ const NavList: React.FC = () => {
 const Button: React.FC<{ to: string; text: string }> = ({ to, text }) => {
   return (
     <Link
+      id="services"
       to={to}
       className=" text-white font-semibold text-lg py-2 px-4 rounded-xl bg-gradient-to-r from-[#f9d204] to-[#e42f70]"
     >
@@ -198,13 +199,13 @@ const Button: React.FC<{ to: string; text: string }> = ({ to, text }) => {
 const SocialGrid: React.FC = () => {
   return (
     <div className="grid grid-cols-2 gap-4 text-xl">
-      <Link to="" target="_blank">
+      <Link to="https://www.facebook.com/lescocktailsdechristelle" target="_blank">
         <FacebookIcon className=" size-5" />
       </Link>
-      <Link to="" target="_blank">
+      <Link to="https://instagram.com/lescocktailsdechristelle?igshid=ZDdkNTZiNTM=" target="_blank">
         <InstagramIcon className=" size-5" />
       </Link>
-      <Link to="" target="_blank">
+      <Link to="https://www.tiktok.com/@lescocktailsdechristelle" target="_blank">
         <TiktokIcon className=" size-5" />
       </Link>
       <Link to="" target="_blank">
