@@ -65,6 +65,11 @@ const Partners: React.FC = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
+
+  const OpenMenuMobile = () => {
+    setIsMobileMenuOpen(true);
+  };
+
   return (
     <div className="w-full h-screen bg-[#e1e1e1]">
       <NavBar
@@ -95,7 +100,7 @@ const Partners: React.FC = () => {
         ))}
       </div>
 
-      <Footer onMobileMenuToggle={toggleMobileMenu} />
+      <Footer onMobileMenuToggle={OpenMenuMobile} />
     </div>
   );
 };

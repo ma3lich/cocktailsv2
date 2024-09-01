@@ -13,6 +13,11 @@ const BarMobile: React.FC = () => {
     setIsMobileMenuOpen(prev => !prev);
   };
 
+  const OpenMenuMobile = () => {
+    setIsMobileMenuOpen(true);
+  };
+
+
   const PointsFortItems = [
     {
       icon: "/logos/logo_cocktail.png",
@@ -87,7 +92,7 @@ const BarMobile: React.FC = () => {
       </div>
       <PointsFort data={PointsFortItems} />
       <Questions data={QuestionsItems} />
-      <Footer onMobileMenuToggle={toggleMobileMenu} />
+      <Footer onMobileMenuToggle={OpenMenuMobile} />
     </div>
   );
 };

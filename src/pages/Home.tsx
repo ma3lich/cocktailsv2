@@ -11,6 +11,11 @@ const Home: React.FC = () => {
     setIsMobileMenuOpen(prev => !prev);
   };
 
+  
+  const OpenMenuMobile = () => {
+    setIsMobileMenuOpen(true);
+  };
+
   return (
     <div className="w-full h-screen bg-[#e1e1e1]">
       <NavBar isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
@@ -119,7 +124,7 @@ const Home: React.FC = () => {
 
       <Advantages />
 
-      <Footer onMobileMenuToggle={toggleMobileMenu} />
+      <Footer onMobileMenuToggle={OpenMenuMobile} />
     </div>
   );
 };

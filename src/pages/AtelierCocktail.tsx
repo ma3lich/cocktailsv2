@@ -10,7 +10,11 @@ const AtelierCocktail: React.FC = () => {
 
   // Fonction pour ouvrir/fermer le menu mobile
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(prev => !prev);
+    setIsMobileMenuOpen((prev) => !prev);
+  };
+
+  const OpenMenuMobile = () => {
+    setIsMobileMenuOpen(true);
   };
 
   const PointsFortItems = [
@@ -48,7 +52,10 @@ const AtelierCocktail: React.FC = () => {
   ];
   return (
     <div className="w-full h-screen bg-[#e1e1e1]">
-      <NavBar isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
+      <NavBar
+        isMobileMenuOpen={isMobileMenuOpen}
+        toggleMobileMenu={toggleMobileMenu}
+      />
       <Header />
       <div className="text-black md:px-36 px-5 mt-10">
         <span className="font-bold text-4xl">
@@ -84,7 +91,7 @@ const AtelierCocktail: React.FC = () => {
       </div>
       <PointsFort data={PointsFortItems} />
       <Questions data={QuestionsItems} />
-      <Footer onMobileMenuToggle={toggleMobileMenu} />
+      <Footer onMobileMenuToggle={OpenMenuMobile} />
     </div>
   );
 };

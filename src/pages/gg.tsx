@@ -10,6 +10,11 @@ const ConfirmationPage: React.FC = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
 
+  const OpenMenuMobile = () => {
+    setIsMobileMenuOpen(true);
+  };
+
+
   return (
     <div className="w-full h-screen bg-[#e1e1e1]">
       <NavBar
@@ -40,7 +45,7 @@ const ConfirmationPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <Footer onMobileMenuToggle={toggleMobileMenu} />
+      <Footer onMobileMenuToggle={OpenMenuMobile} />
     </div>
   );
 };

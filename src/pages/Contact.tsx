@@ -390,6 +390,11 @@ const Contact: React.FC = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
 
+  const OpenMenuMobile = () => {
+    setIsMobileMenuOpen(true);
+  };
+
+
   return (
     <div className="w-full h-screen bg-[#e1e1e1] text-black">
       <NavBar
@@ -397,7 +402,7 @@ const Contact: React.FC = () => {
         toggleMobileMenu={toggleMobileMenu}
       />
       <Form />
-      <Footer onMobileMenuToggle={toggleMobileMenu} />
+      <Footer onMobileMenuToggle={OpenMenuMobile} />
     </div>
   );
 };

@@ -13,6 +13,11 @@ const AtelierDegustation: React.FC = () => {
     setIsMobileMenuOpen(prev => !prev);
   };
 
+  const OpenMenuMobile = () => {
+    setIsMobileMenuOpen(true);
+  };
+
+
   const PointsFortItems = [
     {
       icon: "/logos/logo_team.png",
@@ -72,7 +77,7 @@ const AtelierDegustation: React.FC = () => {
       </div>
       <PointsFort data={PointsFortItems} />
       <Questions data={QuestionsItems} />
-      <Footer onMobileMenuToggle={toggleMobileMenu} />
+      <Footer onMobileMenuToggle={OpenMenuMobile} />
     </div>
   );
 };
