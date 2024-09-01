@@ -1,11 +1,19 @@
+import { useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 
 const Home: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Fonction pour ouvrir/fermer le menu mobile
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(prev => !prev);
+  };
+
   return (
     <div className="w-full h-screen bg-[#e1e1e1]">
-      <NavBar />
+      <NavBar isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
       <Header />
       <div className="w-full md:p-20 p-5 space-y-28 bg-[#e1e1e1] text-black ">
         <div className="flex md:flex-row flex-col items-center md:gap-20 gap-10">
@@ -111,7 +119,7 @@ const Home: React.FC = () => {
 
       <Advantages />
 
-      <Footer />
+      <Footer onMobileMenuToggle={toggleMobileMenu} />
     </div>
   );
 };

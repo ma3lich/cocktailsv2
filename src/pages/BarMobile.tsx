@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
@@ -5,6 +6,13 @@ import PointsFort from "../components/PointsFort";
 import Questions from "../components/Questions";
 
 const BarMobile: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Fonction pour ouvrir/fermer le menu mobile
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(prev => !prev);
+  };
+
   const PointsFortItems = [
     {
       icon: "/logos/logo_cocktail.png",
@@ -40,7 +48,7 @@ const BarMobile: React.FC = () => {
   ];
   return (
     <div className="w-full h-screen bg-[#e1e1e1]">
-      <NavBar />
+      <NavBar isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
       <Header />
       <div className="text-black md:px-36 px-5 mt-10">
 
@@ -79,7 +87,7 @@ const BarMobile: React.FC = () => {
       </div>
       <PointsFort data={PointsFortItems} />
       <Questions data={QuestionsItems} />
-      <Footer />
+      <Footer onMobileMenuToggle={toggleMobileMenu} />
     </div>
   );
 };

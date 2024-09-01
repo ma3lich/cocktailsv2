@@ -83,7 +83,6 @@ const Form: React.FC = () => {
         (result) => {
           console.log(result.text);
           window.location.href = "/success";
-
         },
         (error) => {
           console.log(error.text);
@@ -384,11 +383,21 @@ const ContactSection: React.FC = () => {
 };
 
 const Contact: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Fonction pour ouvrir/fermer le menu mobile
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
+
   return (
     <div className="w-full h-screen bg-[#e1e1e1] text-black">
-      <NavBar />
+      <NavBar
+        isMobileMenuOpen={isMobileMenuOpen}
+        toggleMobileMenu={toggleMobileMenu}
+      />
       <Form />
-      <Footer />
+      <Footer onMobileMenuToggle={toggleMobileMenu} />
     </div>
   );
 };

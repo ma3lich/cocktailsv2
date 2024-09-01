@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
@@ -59,9 +59,18 @@ const partners: Partner[] = [
 
 // Composant Partenaires
 const Partners: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Fonction pour ouvrir/fermer le menu mobile
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
   return (
     <div className="w-full h-screen bg-[#e1e1e1]">
-      <NavBar />
+      <NavBar
+        isMobileMenuOpen={isMobileMenuOpen}
+        toggleMobileMenu={toggleMobileMenu}
+      />
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-20">
         {partners.map((partner, index) => (
@@ -86,7 +95,7 @@ const Partners: React.FC = () => {
         ))}
       </div>
 
-      <Footer />
+      <Footer onMobileMenuToggle={toggleMobileMenu} />
     </div>
   );
 };

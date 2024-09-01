@@ -10,12 +10,27 @@ import {
 } from "./Icons";
 import { useEffect, useRef, useState } from "react";
 
-const NavBar: React.FC = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+interface NavBarProps {
+  isMobileMenuOpen: boolean;
+  toggleMobileMenu: () => void;
+}
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+const NavBar: React.FC<NavBarProps> = ({
+  isMobileMenuOpen,
+  toggleMobileMenu,
+}) => {
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // Clean up by removing the class when the component is unmounted
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <nav className="w-full flex items-center justify-between md:justify-around bg-center bg-[url('/nav_back.png')] px-10 md:px-[10%] py-5 z-50  ">
@@ -52,7 +67,7 @@ const NavBar: React.FC = () => {
 
       {/* Menu Mobile */}
       {isMobileMenuOpen && (
-        <div className="absolute space-y-16 flex flex-col justify-start items-start px-10 w-full h-full top-0 z-50 left-0 bg-center bg-[url('/nav_back.png')] shadow-lg p-5 animate-slideFromTop md:hidden">
+        <div className="absolute space-y-16 flex flex-col justify-start items-start px-10 w-full h-full top-0 z-50 left-0 bg-center bg-[url('/nav_back.png')] shadow-lg p-5 animate-slideFromTop animation-delay-100 opacity-0 overflow-hidden md:hidden">
           <div className="w-full flex justify-between items-center">
             <div className="logo w-6/12 md:w-1/6">
               <img src="/logo.png" alt="logo" className="w-2/5" />
@@ -176,7 +191,9 @@ const NavList: React.FC = () => {
               onToggle={() => handleDropdownToggle(index)}
             />
           ) : (
-            <Link id="menus" to={item.to}>{item.title}</Link>
+            <Link id="menus" to={item.to}>
+              {item.title}
+            </Link>
           )}
         </li>
       ))}
@@ -199,16 +216,28 @@ const Button: React.FC<{ to: string; text: string }> = ({ to, text }) => {
 const SocialGrid: React.FC = () => {
   return (
     <div className="grid grid-cols-2 gap-4 text-xl">
-      <Link to="https://www.facebook.com/lescocktailsdechristelle" target="_blank">
+      <Link
+        to="https://www.facebook.com/lescocktailsdechristelle"
+        target="_blank"
+      >
         <FacebookIcon className=" size-5" />
       </Link>
-      <Link to="https://instagram.com/lescocktailsdechristelle?igshid=ZDdkNTZiNTM=" target="_blank">
+      <Link
+        to="https://instagram.com/lescocktailsdechristelle?igshid=ZDdkNTZiNTM="
+        target="_blank"
+      >
         <InstagramIcon className=" size-5" />
       </Link>
-      <Link to="https://www.tiktok.com/@lescocktailsdechristelle" target="_blank">
+      <Link
+        to="https://www.tiktok.com/@lescocktailsdechristelle"
+        target="_blank"
+      >
         <TiktokIcon className=" size-5" />
       </Link>
-      <Link to="https://fr.linkedin.com/in/les-cocktails-de-christelle-092466274" target="_blank">
+      <Link
+        to="https://fr.linkedin.com/in/les-cocktails-de-christelle-092466274"
+        target="_blank"
+      >
         <LinkedinIcon className=" size-5" />
       </Link>
     </div>
