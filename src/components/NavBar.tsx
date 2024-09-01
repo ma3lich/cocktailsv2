@@ -208,7 +208,7 @@ const SocialGrid: React.FC = () => {
       <Link to="https://www.tiktok.com/@lescocktailsdechristelle" target="_blank">
         <TiktokIcon className=" size-5" />
       </Link>
-      <Link to="" target="_blank">
+      <Link to="https://fr.linkedin.com/in/les-cocktails-de-christelle-092466274" target="_blank">
         <LinkedinIcon className=" size-5" />
       </Link>
     </div>

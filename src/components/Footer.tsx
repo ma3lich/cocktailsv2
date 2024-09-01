@@ -87,18 +87,18 @@ const Footer: React.FC = () => {
           <span>Suivez-nous</span>
         </div>
         <div className="grid md:grid-cols-2 grid-cols-4 gap-4 text-xl justify-center w-full">
-          <Link to="" target="_blank">
-            <FacebookIcon className=" size-8" />
-          </Link>
-          <Link to="" target="_blank">
-            <InstagramIcon className=" size-8" />
-          </Link>
-          <Link to="" target="_blank">
-            <TiktokIcon className=" size-8" />
-          </Link>
-          <Link to="" target="_blank">
-            <LinkedinIcon className=" size-8" />
-          </Link>
+        <Link to="https://www.facebook.com/lescocktailsdechristelle" target="_blank">
+        <FacebookIcon className=" size-8" />
+      </Link>
+      <Link to="https://instagram.com/lescocktailsdechristelle?igshid=ZDdkNTZiNTM=" target="_blank">
+        <InstagramIcon className=" size-8" />
+      </Link>
+      <Link to="https://www.tiktok.com/@lescocktailsdechristelle" target="_blank">
+        <TiktokIcon className=" size-8" />
+      </Link>
+      <Link to="https://fr.linkedin.com/in/les-cocktails-de-christelle-092466274" target="_blank">
+        <LinkedinIcon className=" size-8" />
+      </Link>
         </div>
       </div>
 
