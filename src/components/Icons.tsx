@@ -9,7 +9,7 @@ export const FacebookIcon: React.FC<{ className?: string }> = ({
     >
       <path
         d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31z"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       />
     </svg>
   );
@@ -69,8 +69,8 @@ export const RadioButtonIcon: React.FC<{ className?: string }> = ({
         d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
         fill="none"
         stroke="currentColor"
-        stroke-miterlimit="10"
-        stroke-width="32"
+        strokeMiterlimit="10"
+        strokeWidth="32"
       />
       <circle cx="256" cy="256" r="144" />
     </svg>
@@ -87,9 +87,9 @@ export const MenuIcon: React.FC<{ className?: string }> = ({ className }) => {
       <path
         fill="none"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-miterlimit="10"
-        stroke-width="32"
+        strokeLinecap="round"
+        strokeMiterlimit="10"
+        strokeWidth="32"
         d="M80 160h352M80 256h352M80 352h352"
       />
     </svg>
@@ -108,7 +108,7 @@ export const CloseMenuIcon: React.FC<{ className?: string }> = ({ className }) =
         stroke="currentColor"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-width="32"
+        strokeWidth="32"
         d="M368 368L144 144M368 144L144 368"
       />
     </svg>

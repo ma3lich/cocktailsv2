@@ -7,11 +7,11 @@ import Questions from "../components/Questions";
 const AtelierCocktail: React.FC = () => {
   const PointsFortItems = [
     {
-      icon: "/logos/logo_cocktail.png",
+      icon: "/logos/logo_sansalcol.png",
       text: "Également disponible en version non alcoolisée.",
     },
     {
-      icon: "/logos/logo_sansalcol.png",
+      icon: "/logos/logo_fascicule.png",
       text: "Distribution de guides pratiques pour pouvoir reproduire chez vous.",
     },
     {

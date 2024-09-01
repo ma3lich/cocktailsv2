@@ -139,7 +139,6 @@ const Form: React.FC = () => {
           label="Nom de l'entreprise"
           id="entreprise"
           name="entreprise"
-          required
           value={formValues.entreprise}
           onChange={handleChange}
         />

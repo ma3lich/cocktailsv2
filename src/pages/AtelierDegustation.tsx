@@ -7,12 +7,12 @@ import Questions from "../components/Questions";
 const AtelierDegustation: React.FC = () => {
   const PointsFortItems = [
     {
-      icon: "/logos/logo_sansalcol.png",
-      text: "Également disponible en version non alcoolisée.",
+      icon: "/logos/logo_team.png",
+      text: "Possible de créer une ou des équipes en version sans alcool",
     },
     {
-      icon: "/logos/logo_fascicule.png",
-      text: "Distribution de guides pratiques pour pouvoir reproduire chez vous.",
+      icon: "/logos/logo_diplome.png",
+      text: "Diplôme personnalisé pour chacun des membres de l'équipe vainqueur",
     },
     {
       icon: "/logos/logo_tarif.png",

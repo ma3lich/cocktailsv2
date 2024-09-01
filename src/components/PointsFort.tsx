@@ -5,7 +5,7 @@ type PointsFortProps = {
 
 const PointsFort: React.FC<{ data: Array<PointsFortProps> }> = ({ data }) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-16 my-20 text-black">
+    <div className="flex flex-col items-center justify-center gap-16 py-10 my-10 text-black bg-[#e6c2bf]">
       <span className="font-bold text-2xl md:text-4xl uppercase">Nos Points Fort</span>
       <div className="flex md:flex-row flex-col md:items-start md:justify-start justify-center items-center gap-10 md:px-0 px-5">
         {data.map((point, index) => {
